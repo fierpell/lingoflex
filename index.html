@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LingoFlex - İngilizce Öğrenim Asistanı</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="app-container">
+    
+    
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-name">Lingo<span>Flex</span></span>
+      </div>
+      
+      <nav class="nav-menu">
+        <button class="nav-item active" data-tab="dashboard" id="btn-dashboard">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          Panelim
+        </button>
+        <button class="nav-item" data-tab="vocabulary" id="btn-vocabulary">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5v-15z"></path></svg>
+          Kelime Kartları
+        </button>
+        <button class="nav-item" data-tab="sentence" id="btn-sentence">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          Cümle Kurma
+        </button>
+        <button class="nav-item" data-tab="challenge" id="btn-challenge">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+          Günlük Sınav
+        </button>
+      </nav>
+
+      <div class="user-quick-profile">
+        <div class="avatar">
+          <span id="user-initials">LF</span>
+        </div>
+        <div class="info">
+          <span class="name">Gezgin Öğrenci</span>
+          <span class="level-badge" id="sidebar-level">A1 Seviyesi</span>
+        </div>
+      </div>
+    </aside>
+
+    
+    <main class="main-content">
+      
+      
+      <header class="top-header">
+        <h1 class="page-title" id="page-title">Panelim</h1>
+        <div class="stats-bar">
+          <div class="header-stat" title="Günlük Serin">
+            <span class="stat-icon">🔥</span>
+            <span class="stat-value" id="header-streak">0 Gün</span>
+          </div>
+          <div class="header-stat" title="Toplam Puan (XP)">
+            <span class="stat-icon font-bold text-yellow-400">⚡</span>
+            <span class="stat-value" id="header-xp">0 XP</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="content-body">
+        
+        
+        <section id="tab-dashboard" class="tab-pane active">
+          <div class="welcome-card">
+            <div class="welcome-text">
+              <h2>Tekrar hoş geldin! 👋</h2>
+              <p>Bugün İngilizce seviyeni geliştirmek için harika bir gün. Günlük hedeflerini tamamlamaya ne dersin?</p>
+              <div class="quote-box">
+                <span class="quote-title">Günün Motivasyonu:</span>
+                <p id="daily-quote">"The limits of my language mean the limits of my world." – Ludwig Wittgenstein</p>
+              </div>
+            </div>
+            <div class="welcome-illustration">
+              <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="100" r="80" fill="url(#paint0_linear)" fill-opacity="0.15"/>
+                <path d="M140 100C140 122.091 122.091 140 100 140C77.9086 140 60 122.091 60 100C60 77.9086 77.9086 60 100 60C122.091 60 140 77.9086 140 100Z" fill="url(#paint0_linear)" fill-opacity="0.3"/>
+                <circle cx="100" cy="100" r="30" fill="url(#paint0_linear)" />
+                <defs>
+                  <linearGradient id="paint0_linear" x1="60" y1="60" x2="140" y2="140" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#059669"/>
+                    <stop offset="1" stop-color="#34d399"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="card-icon">🚀</span>
+              <div class="stat-details">
+                <span class="stat-num" id="dashboard-lessons">0</span>
+                <span class="stat-label">Tamamlanan Pratik</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <span class="card-icon">🎯</span>
+              <div class="stat-details">
+                <span class="stat-num" id="dashboard-accuracy">0%</span>
+                <span class="stat-label">Sınav Başarı Oranı</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <span class="card-icon">🏆</span>
+              <div class="stat-details">
+                <span class="stat-num" id="dashboard-rank">Bronz</span>
+                <span class="stat-label">Mevcut Lig</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid-layout">
+            <div class="progress-box glass-panel">
+              <h3>Gelişim Yol Haritası</h3>
+              <div class="level-progress-item">
+                <div class="level-header">
+                  <span class="level-title">A1-A2 Başlangıç Seviyesi</span>
+                  <span class="level-percentage" id="progress-pct-a">0%</span>
+                </div>
+                <div class="progress-track">
+                  <div class="progress-fill" id="progress-fill-a" style="width: 0%"></div>
+                </div>
+              </div>
+              
+              <div class="level-progress-item">
+                <div class="level-header">
+                  <span class="level-title">B1-B2 Orta Seviye</span>
+                  <span class="level-percentage" id="progress-pct-b">0%</span>
+                </div>
+                <div class="progress-track">
+                  <div class="progress-fill" id="progress-fill-b" style="width: 0%"></div>
+                </div>
+              </div>
+
+              <div class="level-progress-item">
+                <div class="level-header">
+                  <span class="level-title">C1-C2 İleri Seviye</span>
+                  <span class="level-percentage" id="progress-pct-c">0%</span>
+                </div>
+                <div class="progress-track">
+                  <div class="progress-fill" id="progress-fill-c" style="width: 0%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="quick-study glass-panel">
+              <h3>Hızlı Başlangıç</h3>
+              <p>Seviyene en uygun olan veya istediğin modülü seçerek hemen çalışmaya başlayabilirsin.</p>
+              <div class="quick-links">
+                <button class="quick-link-btn" onclick="switchTab('vocabulary')">
+                  <span class="icon">🎴</span>
+                  <div class="desc">
+                    <strong>Kelime Ezberle</strong>
+                    <span>Kartları çevir, telaffuzunu dinle</span>
+                  </div>
+                </button>
+                <button class="quick-link-btn" onclick="switchTab('sentence')">
+                  <span class="icon">🧩</span>
+                  <div class="desc">
+                    <strong>Cümle Oluştur</strong>
+                    <span>Kelimeleri doğru sıraya diz</span>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        
+        <section id="tab-vocabulary" class="tab-pane">
+          <div class="module-header-actions">
+            <div class="level-selector">
+              <button class="level-btn active" data-vocab-level="easy">A1 - A2</button>
+              <button class="level-btn" data-vocab-level="medium">B1 - B2</button>
+              <button class="level-btn" data-vocab-level="hard">C1 - C2</button>
+            </div>
+            <div class="deck-progress">
+              <span id="vocab-progress-text">Kart: 1/10</span>
+              <div class="progress-track mini"><div class="progress-fill" id="vocab-progress-fill" style="width: 10%"></div></div>
+            </div>
+          </div>
+
+          <div class="card-playground">
+            
+            <div class="flashcard-container" id="vocab-card">
+              <div class="flashcard">
+                
+                <div class="card-side front">
+                  <span class="card-badge">İngilizce</span>
+                  <div class="word-content">
+                    <h2 class="word" id="vocab-word-en">Loading...</h2>
+                    <span class="phonetic" id="vocab-phonetic">/loading/</span>
+                  </div>
+                  <button class="sound-btn" id="vocab-tts-btn" title="Telaffuzu Dinle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                  </button>
+                  <p class="hint-text">Türkçe karşılığı için karta tıkla</p>
+                </div>
+                
+                
+                <div class="card-side back">
+                  <span class="card-badge">Türkçe</span>
+                  <div class="word-content">
+                    <h2 class="word" id="vocab-word-tr">Yükleniyor...</h2>
+                    <p class="word-definition" id="vocab-definition">Kelimenin tanımı veya anlam açıklaması.</p>
+                    <div class="word-example">
+                      <strong>Örnek Cümle:</strong>
+                      <p id="vocab-example">"This is an example sentence in English."</p>
+                      <span class="example-translation" id="vocab-example-tr">"Bu, İngilizce bir örnek cümledir."</span>
+                    </div>
+                  </div>
+                  <p class="hint-text">İngilizce karşılığı için tekrar tıkla</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card-controls">
+              <button class="vocab-action-btn skip" id="vocab-skip-btn">Tekrar Göster</button>
+              <button class="vocab-action-btn learn" id="vocab-learn-btn">Öğrendim! 👍</button>
+            </div>
+          </div>
+        </section>
+
+        
+        <section id="tab-sentence" class="tab-pane">
+          <div class="instructions-panel">
+            <p>Aşağıda Türkçe meali verilen cümleyi, kelime bloklarını doğru sırayla tıklayarak İngilizce olarak oluşturun.</p>
+          </div>
+
+          <div class="sentence-workspace">
+            <div class="target-sentence-box">
+              <span class="lang-tag">TR</span>
+              <p id="puzzle-turkish-sentence">Yükleniyor...</p>
+            </div>
+
+            
+            <div class="build-area" id="puzzle-build-area">
+              
+              <div class="placeholder-text" id="puzzle-placeholder">Kelimeleri buraya dizin...</div>
+            </div>
+
+            
+            <div class="words-pool" id="puzzle-words-pool">
+              
+            </div>
+
+            <div class="puzzle-controls">
+              <button class="puzzle-btn reset" id="puzzle-reset-btn">Sıfırla 🧹</button>
+              <button class="puzzle-btn check" id="puzzle-check-btn">Kontrol Et 🚀</button>
+            </div>
+
+            
+            <div class="puzzle-feedback" id="puzzle-feedback">
+              <div class="feedback-content">
+                <span class="feedback-icon" id="puzzle-feedback-icon">🎉</span>
+                <h4 id="puzzle-feedback-title">Tebrikler!</h4>
+                <p id="puzzle-feedback-desc">Cümleyi başarıyla kurdun.</p>
+                <button class="puzzle-btn next" id="puzzle-next-btn">Sonraki Cümle ➡️</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        
+        <section id="tab-challenge" class="tab-pane">
+          <div class="quiz-container" id="quiz-intro">
+            <div class="quiz-intro-card glass-panel">
+              <span class="quiz-badge">⚡ Günlük Meydan Okuma ⚡</span>
+              <h2>Bilgilerini Test Et!</h2>
+              <p>Rastgele kelimelerden oluşan bu sınırsız testi çözerek doğru cevapladığınız her soru için 5 XP kazanabilir ve istediğiniz zaman sınavı bitirebilirsiniz.</p>
+              <div class="quiz-rewards">
+                <div class="reward-item">
+                  <span class="reward-icon">⚡</span>
+                  <span>Doğru Başına +5 XP</span>
+                </div>
+                <div class="reward-item">
+                  <span class="reward-icon">🔥</span>
+                  <span>Sınırsız Soru</span>
+                </div>
+              </div>
+              <button class="quiz-start-btn" id="quiz-start-btn">Sınavı Başlat 🎯</button>
+            </div>
+          </div>
+
+          <div class="quiz-container hidden" id="quiz-playground">
+            <div class="quiz-progress-bar">
+              <div class="progress-num" id="quiz-q-number">Soru 1</div>
+              <div class="progress-track mini"><div class="progress-fill" id="quiz-progress-fill" style="width: 100%"></div></div>
+            </div>
+
+            <div class="quiz-question-card glass-panel">
+              <h3 id="quiz-question-text">Soru metni buraya gelecek?</h3>
+              <div class="quiz-options" id="quiz-options-container">
+                
+              </div>
+            </div>
+
+            <div class="quiz-footer">
+              <button class="quiz-nav-btn" id="quiz-end-btn">Sınavı Bitir 🏁</button>
+              <button class="quiz-nav-btn" id="quiz-next-q-btn" disabled>Sonraki Soru ➡️</button>
+            </div>
+          </div>
+
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+  
+  <canvas class="confetti" id="confetti-canvas"></canvas>
+  <div id="toast-container" class="toast-container"></div>
+  <script src="db.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
